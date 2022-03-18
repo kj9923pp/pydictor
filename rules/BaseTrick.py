@@ -11,6 +11,7 @@ from __future__ import unicode_literals
 from core.EXTEND import wordsharker
 from lib.data.data import pyoptions
 from lib.fun.fun import unique
+from itertools import chain
 
 
 def simplejoin(first, second):
@@ -25,7 +26,7 @@ def simplejoin(first, second):
         ff.append(second)
     for f in ff:
         for s in ss:
-            yield f + s
+            yield chain(f, s)
 
 
 def middlejoin(firstlist, secondlist, midstr):
